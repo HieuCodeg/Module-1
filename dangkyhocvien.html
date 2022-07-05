@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html action="dangkyhocvien.html" method="get">
+    <head>
+        <title>bai tap Nguyen Minh Hieu</title>
+        <meta charset="utf-8">
+        <style>
+            .tb{
+                background-color: blanchedalmond;
+            }
+            .hang1{
+                color:blue;
+                background-color: rgb(150, 196, 237);
+                text-align: left;
+                font-size-adjust:20px;
+            }
+        </style>
+
+    </head>
+    <body>
+     <form>      
+        <table class="tb">
+                <tr class="hang1">
+                    <th colspan="2">ĐĂNG KÝ HỌC VIÊN</th>
+                </tr>
+                <tr>
+                    <td>Họ và tên</td>
+                    <td><input type="text" name="name"/> </td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh</td>
+                    <td>
+                        <input type="text" name="bird"/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giới tính</td>
+                    <td>
+                        <input name="gender" value="Male"  type="radio" checked/> Nam 
+                        <input name="gender" value="Female" type="radio" /> Nữ
+                    </td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td>
+                        <textarea cols="30" rows="3"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lớp</td>
+                    <td>
+                        <select name="-Chọn lớp-">
+                            <option value="l1">Lớp 1</option>
+                            <option value="l2">Lớp 2</option>
+                            <option value="l3">Lớp 3</option>
+                            <option value="l4">Lớp 4</option>
+                            <option value="l5">Lớp 5</option>
+                            <option value="l6">Lớp 6</option>
+                            <option value="l7">Lớp 7</option>
+                            <option value="l8">Lớp 8</option>
+                            <option value="l9">Lớp 9</option>
+                            <option value="l10">Lớp 10</option>
+                            <option value="l11">Lớp 11</option>
+                            <option value="l12">Lớp 12</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="text" name="email"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Điện thoại</td>
+                    <td>
+                        <input type="text" name="phone"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Đăng ký">
+                        <input type="reset" value="Nhập lại"/>
+                    </td>
+                </tr>
+                
+            </table>
+     </form> 
+    </body>
+    
+</html>
