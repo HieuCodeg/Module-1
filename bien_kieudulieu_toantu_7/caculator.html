@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Máy tính đơn giản</title>
+        <meta charset="utf-8">
+        <style>
+            .tb {
+                padding: 10px;
+                border-radius: 1em;
+                height: 500px;
+                width: 600px;
+                margin: auto;
+                background-color: #626368;
+                box-shadow: rgba(189, 129, 34, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            }
+            .screen {
+                font-family: 'Orbitron', sans-serif;
+                font-size:35px;
+                background-color: #dcdbe1;
+                border: solid black 0.5px;
+                color: rgb(10, 10, 10);
+                border-radius: 5px;
+                width: 100%;
+                height: 65%;
+            }
+            #det {
+                background-color: #fb0066;
+            }
+            input[type=button] {
+                font-family:'Times New Roman', Times, serif;
+                font-size: 20px;
+                background-color: #1fb597;
+                color: white;
+                border: solid black 0.5px;
+                width: 100%;
+                border-radius: 7px;
+                height: 75%;
+                outline: none;
+            }
+            input:active[type=button] {
+                font-size: large;
+                background: #e5e5e5;
+                -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+                -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+                box-shadow: inset 0px 0px 5px #c1c1c1;
+            }
+        </style>
+    </head>
+    <body>
+        <table class ="tb">
+            <tr>
+                <td colspan="3"><input type="text" class="screen" id="manhinh" disabled></td>
+                <td><input type="button" value="  C  " id="det" class="xoa" onclick="xoamanhinh()"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="hien('1')"/> </td>
+                <td><input type="button" value="2" onclick="hien('2')"/> </td>
+                <td><input type="button" value="3" onclick="hien('3')"/> </td>
+                <td><input type="button" value="+" onclick="hien('+')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="hien('4')"/> </td>
+                <td><input type="button" value="5" onclick="hien('5')"/> </td>
+                <td><input type="button" value="6" onclick="hien('6')"/> </td>
+                <td><input type="button" value="-" onclick="hien('-')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="hien('7')"/> </td>
+                <td><input type="button" value="8" onclick="hien('8')"/> </td>
+                <td><input type="button" value="9" onclick="hien('9')"/> </td>
+                <td><input type="button" value="*" onclick="hien('*')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="hien('.')"/> </td>
+                <td><input type="button" value="0" onclick="hien('0')"/> </td>
+                <td><input type="button" value="=" onclick="tinh()"/> </td>
+                <td><input type="button" value="/" onclick="hien('/')"/> </td>
+            </tr>
+        </table>
+        <script type="text/JavaScript" src="caculator.js"></script>
+    </body>
+</html>
