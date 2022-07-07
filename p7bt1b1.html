@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tính điểm trung bình</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script >
+            inputly = prompt("Nhập điểm lý =");
+            inputhoa = prompt("Nhập điểm hóa =");
+            inputsinh = prompt("Nhập điểm sinh");
+            let ly = parseInt(inputly);
+            let hoa = parseInt(inputhoa);
+            let sinh = parseInt(inputsinh);
+            let tong = (ly + hoa + sinh);
+            let trungbinh =(tong/3).toFixed(2);
+            document.write("Điểm trung bình 3 môn = " + trungbinh);
+            document.write('<br>');
+            document.write("Điểm tổng 3 môn = " + tong); 
+                      
+        </script>
+    </body>
+</html>
