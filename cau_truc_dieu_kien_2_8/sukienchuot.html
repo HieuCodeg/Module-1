@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <img id="bong" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg" style ="width: 30%"/>
+        <p> Click me để di chuyển bóng</p>
+        <input type="button" value="Click me" onclick="moveRight();"/>
+    </form>
+    <script>
+        let imgobj = null;
+        imgobj = document.getElementById('bong');
+        function init() {
+            imgbjo = document.getElementById('bong');
+            imgbjo.style.position = 'relative';
+            imgbjo.style.left = '0px';
+        }
+        function moveRight() {
+            imgbjo.style.left = parseInt(imgobj.style.left) +30 + 'px';
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>
