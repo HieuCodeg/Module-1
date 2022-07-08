@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = prompt('Điểm kiểm tra: ');
+        let b = prompt('Điểm giữa kỳ: ');
+        let c = prompt('Điểm cuối kỳ: ');
+        let ketqua = (parseInt(a) + parseInt(b)*2 + parseInt(c)*3)/6 ;
+        if (ketqua >=8) {
+            alert('Bạn là học sinh giỏi '+ ketqua);
+        } else if( ketqua >=6.5) {
+            alert('Bạn là học sinh khá ' + ketqua);
+        } else if(ketqua >=5) {
+            alert('Bạn là học sinh trung bình ' + ketqua);
+        } else {
+            alert('Bạn là học sinh yếu ' + ketqua);
+        }
+    </script>
+</body>
+</html>
