@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="thuchien()">
+    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+    <script>
+        function len() {
+            let element = document.getElementById("nobita");
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+        function xuong() {
+            let element = document.getElementById("nobita");
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+        function trai() {
+            let element = document.getElementById("nobita");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+        function phai() {
+            let element = document.getElementById("nobita");
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+        function xuly(evt) {
+            switch (evt.keyCode) {
+                case 37: 
+                    trai();
+                    break;
+                case 39:
+                    phai();
+                    break;
+                case 38: 
+                    len();
+                    break;
+                case 40: 
+                    xuong();
+                    break;
+            }
+        }
+        function thuchien() {
+            window.addEventListener('keydown', xuly);
+        }
+    </script>
+</body>
+</html>
