@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       for (i=1 ; i<7 ; i++) {
+            document.write("<br>");
+            if ((i==1) || (i ==6)) {
+                for (j = 1 ; j <=15 ; j++) {
+                    document.write("*");
+                } 
+            } else {
+                    document.write("*");
+                    for (b = 1 ; b <14 ; b++) {
+                        document.write("&#160&#160");
+                    }
+                    document.write("*");
+                }
+       }
+    </script>
+</body>
+</html>

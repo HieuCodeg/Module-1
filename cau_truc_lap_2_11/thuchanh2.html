@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = parseInt(prompt("Hãy nhập số lượng số nguyên tố cần in ra: "));
+        let dem = 0;
+        let N = 2;
+        function kiemtraa(value) {
+            let kiemtra = true;
+            if (value == 2) {
+                document.write(2 + "<br>");
+                dem +=1;
+                N +=1;
+            } else {
+                for (i = 2; i< value ; i++) {
+                    if (value % i == 0) {
+                        kiemtra= false;
+                    }
+                }
+                if (kiemtra == true) {
+                    document.write(value + "<br>");
+                    dem +=1;
+                    N +=1;
+                }
+            }
+        }
+        for (j=2 ; dem<number ; j++) {
+            kiemtraa(j);
+        }
+        
+       
+    </script>
+</body>
+</html>

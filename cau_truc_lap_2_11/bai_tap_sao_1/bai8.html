@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        debugger;
+        let number = parseInt(prompt("Nhập khoảng bạn muốn đoán"));
+        let sodoan = Math.floor( Math.random() * number );
+        let dem =1;
+        for (i=0 ; i<4 ; i++) {
+            let doan = parseInt(prompt("Nhập số bạn đoán: "));
+            if (dem >3) {
+                alert("Bạn đoán 5quá số lần");
+                break;
+            } else if (doan == sodoan) {
+                alert("Chúc mừng bạn");
+                break;
+            } else if (doan < sodoan) {
+                alert("Số bạn đoán nhỏ hơn");
+                dem++;
+            } else if (doan> sodoan) {
+                alert("Số bạn đoán lớn hơn");
+                dem++;
+            }
+
+        }
+        
+    </script>
+</body>
+</html>
