@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Caro Game Simple</h1> <br/>
+    <hr> <br/> <br/>
+    <p id ="caro"></p>
+    <button onclick="choi()">Change value</button> <br/>
+    <script>
+        let data = "";
+        let ban = [];
+        for (i = 0; i < 5; i++) {
+            ban[i] = new Array(0, 0, 0, 0, 0);
+        }
+        for (i = 0; i< 5; i++) {
+           data += "<br/>";
+            for (j = 0; j < 5; j++) {
+                data += ban[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        document.getElementById("caro").innerHTML = data;
+        function choi() {
+            let x = prompt("Nhập số hàng: ");
+            let y = prompt("Nhập số cột: "); data = "";
+            ban[x][y] = "x";
+            for (i = 0; i< 5; i++) {
+                data += "<br/>";
+                for (j = 0; j < 5; j++) {
+                    data += ban[i][j] + "&nbsp;&nbsp;";
+                }
+            }
+            document.getElementById("caro").innerHTML = data;
+
+        }
+    </script>
+</body>
+</html>

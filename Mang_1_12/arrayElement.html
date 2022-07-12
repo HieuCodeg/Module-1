@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="textt"/>
+    <input type="button" id="btnAdd" value="Add" onclick="add();"/>
+    <input type="button" id="btnDisplay" value="Display" onclick="display();"/>
+    <div id="ketqua"></div>
+    <script>
+        let x = 0;
+        let array = Array();
+        function add() {
+            array[x] = document.getElementById("textt").value;
+            alert("Đã thêm phần tử " + array[x] + " vào mảng");
+            x++;
+            document.getElementById("textt").value = "";
+        }
+        function display() {
+            let e = "<hr/>";
+            for ( let i=0 ; i< array.length ; i++) {
+                e += "Phần tử " + i + "=" + array[i] + "<br/>";
+            }
+            document.getElementById("ketqua").innerHTML = e;
+        }
+    </script>
+</body>
+</html>
