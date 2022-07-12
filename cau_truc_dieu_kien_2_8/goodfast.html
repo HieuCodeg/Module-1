@@ -1,19 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(150px);
+  -ms-transform: translateX(150px);
+  transform: translateX(150px);
+}
+
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
 </head>
 <body>
-    <input type="range" name="" id="good" min="0" max="1" onclick="chayg()"/> Good <br>
-    <input type="range" name="" id="fast"/> Fast <br>
-    <input type="range" name="" id="cheap"/> Cheap <br>
-    <script>
-        
-        }
-    </script>
-    
+
+<h2>GAME GOOD-CHEAP-FAST </h2>
+
+<label class="switch" >
+  <input type="checkbox" id="btn1" onclick="chon(1)" >  
+  <span class="slider round"></span>
+</label> 
+<lable for="btn1" style="font-size: larger; color:green;vertical-align: middle;">GOOD</lable>
+<br> <br>
+<label class="switch" >
+  <input type="checkbox"  id="btn2" onclick="chon(2)" >
+  <span class="slider round"></span>
+</label>
+<lable for="btn2" style="font-size: larger; color:orange;vertical-align: middle;">CHEAP</lable>
+<br> <br>
+<label class="switch" >
+  <input type="checkbox"  id="btn3" onclick="chon(3)" >
+  <span class="slider round"></span>
+</label>
+<lable for="btn3" style="font-size: larger; color:RED;vertical-align: middle;">FAST</lable>
+<script>
+    function chon(value) {  
+      if (value==1) {
+        if (document.getElementById("btn2").checked == true && document.getElementById("btn3").checked == true ) {
+          document.getElementById("btn3").checked = false;} 
+      }
+      if (value==2) {
+        if (document.getElementById("btn1").checked == true && document.getElementById("btn3").checked == true ) {
+          document.getElementById("btn1").checked = false;} 
+      }
+      if (value==3) {
+        if (document.getElementById("btn1").checked == true && document.getElementById("btn2").checked == true ) {
+          document.getElementById("btn2").checked = false;} 
+      }
+    }
+</script>
 </body>
-</html>
+</html> 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game puzzle</title>
+    <style>
+        img {
+            margin:0px;
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <img src="cat1.jpg" alt="cat" id="bn1" width="600px" height="130px" onclick="change(0)" /> <br>
+        <img src="mon2.jpg" alt="mon" id="bn2" width="600px" height="130px" onclick="change(1)" /> <br>
+        <img src="cat3.jpg" alt="cat" id="bn3" width="600px" height="130px" onclick="change(2)" /> <br>
+        <img src="pan4.jpg" alt="pan" id="bn4" width="600px" height="130px" onclick="change(3)" /> <br>
+        <img src="cat5.jpg" alt="cat" Fd="bn5" width="600px" height="130px" onclick="change(4)" />
+    </div>
+    <script>
+        function change(hieu) {
+            let imgTag = document.getElementsByTagName("img")[hieu];
+            hieu += 1;
+            if (imgTag.alt == "cat") {
+                imgTag.src = "mon"+hieu+".jpg";
+                imgTag.alt = "mon";
+            } else {
+                if (imgTag.alt == "mon") {
+                    imgTag.src = `pan${hieu}.jpg`;
+                    imgTag.alt = "pan";
+                } else {
+                    imgTag.src = `cat${hieu}.jpg`;
+                    imgTag.alt = "cat";
+                }
+            }
+            
+            let flag=0;
+            for (let i = 0; i < 5; i++) {
+               if(document.getElementsByTagName("img")[i].alt==imgTag.alt) 
+                    flag+=1;
+            }
+            if(flag==5) {
+                alert("win");
+            }
+        }
+    </script>
+</body>
+
+</html>
