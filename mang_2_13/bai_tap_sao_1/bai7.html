@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = [14,15,6,4,5,14,25,27,2,66];
+        let v = parseInt(prompt("Nhập số nguyên v"));
+        if (x.indexOf(v)!== -1) {
+            let dem = x.indexOf(v);
+            for (i=dem ; i < x.length -1; i++) {
+                x[i] = x[i + 1];
+            }
+            x[x.length -1] = 0; 
+        } else {
+            console.log("V ís not in array");
+        }
+        console.log(x);
+    </script>
+</body>
+</html>

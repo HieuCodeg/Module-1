@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = [14,15,6,4,5,14,25,27,2,66];
+        let dem = 0; max = x[0]; tong=x[0];
+        for (i=1; i<x.length ; i++) {
+            tong += x[i];
+            if (x[i] > max) {
+                max =x[i];
+            }
+        }
+        dem = tong/x.length;
+        console.log("Max là " + max + ". Gía trị trung bình là "+ dem);
+    </script>
+</body>
+</html>

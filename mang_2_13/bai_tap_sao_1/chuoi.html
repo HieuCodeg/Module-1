@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = prompt("Nhập vào một chuỗi:");
+        let ham = "aeiouAEIOU"; dem=0;
+        for (i=0 ; i<x.length; i++) {
+            if (ham.indexOf(x.charAt(i)) !== -1) {
+                dem ++;
+            }
+        }
+        console.log("Số nguyên âm là " + dem);
+
+    </script>
+</body>
+</html>

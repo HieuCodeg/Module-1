@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt("Nhập vào một chuỗi");
+        console.log(str);
+        let ketqua = [];
+        let hoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let thuong = 'abcdefghijklmnopqrstuvwxyz';
+        for (i = 0; i < str.length; i++) {
+            if (hoa.includes(str[i])) {
+                ketqua.push(str[i].toLowerCase());
+            } else if (thuong.includes(str[i])) {
+                ketqua.push(str[i].toUpperCase());
+            } else {
+                ketqua.push(str[i]);
+            }
+        }
+        console.log(ketqua.join(''));
+    </script>
+</body>
+</html>

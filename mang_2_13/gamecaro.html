@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Caro Game Simple</h1> <br/>
+    <hr> <br/> <br/>
+    <p id ="caro"></p>
+    <button onclick="choi()">Change value</button> <br/>
+    <script>
+        let data = "";
+        let ban = [];
+        for (i = 0; i < 5; i++) {
+            ban[i] = new Array("&#9744;","&#9744;", "&#9744;", "&#9744;", "&#9744;");
+        }
+        for (i = 0; i< 5; i++) {
+           data += "<br/>";
+            for (j = 0; j < 5; j++) {
+                data += ban[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        let h = 1;
+        document.getElementById("caro").innerHTML = data;
+        function choi() {
+            let x = prompt("Nhập số hàng: ");
+            let y = prompt("Nhập số cột: "); data = "";
+            if (h % 2 == 0) {
+                ban[x][y] = "x";
+            } else {
+                ban[x][y] = "o";
+            }
+            h++;
+            for (i = 0; i< 5; i++) {
+                data += "<br/>";
+                for (j = 0; j < 5; j++) {
+                    data += ban[i][j] + "&nbsp;&nbsp;";
+                }
+            }
+            document.getElementById("caro").innerHTML = data;
+            for (i = 0; i <5 ; i++) {
+                for (j = 0; j < 5; j++) {
+                    if (ban[i][j] == "x" && ban[i][j+1] == "x" && ban[i][j+2] == "x" ||
+                        ban[i][j] == "x" && ban[i+1][j] == "x" && ban[i+2][j] == "x") {
+                            alert("x thắng");
+                    } else if (ban[i][j] == "o" && ban[i][j+1] == "o" && ban[i][j+2] == "o" ||
+                        ban[i][j] == "o" && ban[i+1][j] == "o" && ban[i+2][j] == "o") {
+                            alert("o thắng");
+                        }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

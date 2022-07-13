@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <lable for="nhap">Nhập từ</lable>
+        <input type="text" id="nhap" name=""/>
+        <button onclick="dich()">Dịch</button>
+        <p id="result"></p>
+   
+    <script>
+        let mang1 =["government","way","art","world","computer","people",
+                "two","family","history",'health',"system","information",
+                "meat","year","thanks","music","person","reading","method"];
+        let mang2 = ["Chính phủ","Đường","Nghệ thuật","Thế giới","Máy tính",
+                    "Người","Hai","Gia đình","Lịch sử","Sức khỏe","Hệ thống","Thông tin",
+                    "Thịt","Năm","Lời cảm ơn","Âm nhạc",
+                    "Người","Cách đọc","Phương pháp"];
+        function dich() {
+            let x = document.getElementById("nhap").value;
+            let ketqua=0; dem = false;
+            for (i = 0; i < mang1.length ; i++) {
+                if (mang1[i] == x){
+                    dem = true;
+                    ketqua = i;
+                }
+            }
+            if (dem == true) {
+                document.getElementById("result").innerHTML = mang2[ketqua];
+            } else {
+                document.getElementById("result").innerHTML = "Chưa cập nhật";
+            }
+        }
+    </script>
+</body>
+</html>
