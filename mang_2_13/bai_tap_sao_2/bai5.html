@@ -8,16 +8,13 @@
 </head>
 <body>
     <script>
-        let x = new Array(10);
-        for (i=0; i<10; i++) {
-            x[i] = prompt("Nhập phần tử");
+        let a = prompt("Nhập chuỗi a: ");
+        let b = prompt("Nhập chuỗi b: ");
+        if ( a == b) {
+            console.log("a giống b");
+        } else {
+            console.log("a khác b");
         }
-        x.sort();
-        console.log(x);
-        x.sort(function(a,b) {
-            return b - a;
-        })
-        console.log(x);
     </script>
 </body>
 </html>

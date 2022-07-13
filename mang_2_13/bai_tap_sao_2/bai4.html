@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mang= "Hom  nay   troi dep qua";
+        let kichthuoc = mang.length; 
+        let dem = 0;
+        for (i=0 ; i<kichthuoc; i++) {
+            if ((mang[i] != " ") && (mang[i+1] == " ") || (mang[i] != " ") && ( (i+1)== kichthuoc)) {
+                dem++;
+            }
+        }
+        console.log("Có tổng cộng " + dem + " từ");
+    </script>
+</body>
+</html>

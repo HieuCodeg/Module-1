@@ -8,16 +8,15 @@
 </head>
 <body>
     <script>
-        let x = new Array(10);
-        for (i=0; i<10; i++) {
-            x[i] = prompt("Nhập phần tử");
+        let a =["g","H","e","-","-","s","-"];
+        console.log(a);
+        for (i=0; i<a.length ; i++) {
+            if (a[i] == "-") {
+                a[i] = "_";
+            }
         }
-        x.sort();
-        console.log(x);
-        x.sort(function(a,b) {
-            return b - a;
-        })
-        console.log(x);
+        console.log(a);
+
     </script>
 </body>
 </html>

@@ -8,16 +8,9 @@
 </head>
 <body>
     <script>
-        let x = new Array(10);
-        for (i=0; i<10; i++) {
-            x[i] = prompt("Nhập phần tử");
-        }
-        x.sort();
-        console.log(x);
-        x.sort(function(a,b) {
-            return b - a;
-        })
-        console.log(x);
+        let mang = ["u","e","i","H", " ", "h","n","i","M"];
+        mang.reverse(); 
+        console.log(mang.join(""));
     </script>
 </body>
 </html>

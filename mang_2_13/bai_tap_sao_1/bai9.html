@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = new Array(10);
+        for (i=0; i<10; i++) {
+            a[i] = prompt("Nhập phần tử cho mảng 1");
+        }
+        let b = new Array(10);
+        for (i=0; i<10; i++) {
+            b[i] = prompt("Nhập phần tử cho mảng 2");
+        }
+        let c = new Array(20);
+        c = a.concat(b);
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    </script>
+</body>
+</html>
