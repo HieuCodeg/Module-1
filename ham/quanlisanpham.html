@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nut {
+            background-color: green;
+            color: white;
+            border-color: green;
+            width:80px;
+        }
+        #cotten {
+            width: 200px;
+        }
+        #nutadd {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+        <h2>Add New Product</h2>
+        <input type="text" id="them" name="" placeholder="New Product"/>
+        <button id="nutadd" onclick="add()">ADD</button>
+        <hr>
+        <p><h2>Danh sách tên sản phẩm</h2></p>
+    <p id="bangthongtin"></p>
+    <script>
+        let mang = ["Sony Xperia","Samsung Galax","Nokia","Xiaomi"];
+        function add() {
+            dem = mang.length;
+            let moi = document.getElementById("them").value;
+            mang[dem] = moi;
+            document.getElementById("bangthongtin").innerHTML = hienbang();
+            document.getElementById("them").value = null;
+        }
+        function hienbang() {
+            let bang = "<table>";
+            for (i=0 ; i< mang.length ; i++) {
+                bang +="<tr>"+"<td>"+(i+1)+"."+"</td>"+"<td id='cotten'>"+mang[i]+"</td>"+
+                    "<td><button class='nut' onclick='sua("+i+")'>Edit</button></td><td><button class='nut' onclick='xoa("+
+                        i+")''>Delete</button></td> </tr>";
+            }
+            bang += "</table>";
+            return bang
+        }
+        function xoa(value) {
+            mang.splice(value,1);
+            document.getElementById("bangthongtin").innerHTML = hienbang();
+        }
+        function sua(value) {
+            let giatri = prompt("Nhập giá trị mới");
+            mang[value] = giatri;
+            document.getElementById("bangthongtin").innerHTML = hienbang();
+        }
+        document.getElementById("bangthongtin").innerHTML = hienbang();
+    </script>
+</body>
+</html>

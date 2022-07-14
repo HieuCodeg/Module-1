@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tu = prompt("Nhập từ cần kiểm tra");
+        kiemtra(tu);
+        function kiemtra(value) {
+            let a= value.length;
+            if (a %2 == 0) {
+                dem = a/2;
+            } else {
+                dem = (a-1)/2;
+            }
+            let result = true;
+            for (i= 0; i<dem ;i++) {
+                if (value[i] != value[a -i-1]) {
+                    result = false;
+                }
+            }
+            if (result) {
+                alert(tu + " là chuỗi palindrome");
+            } else {
+                alert(tu + " không phải là chuỗi palindrome");
+            }
+        }
+    </script>
+</body>
+</html>
