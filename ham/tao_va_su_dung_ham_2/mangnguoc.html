@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="themphantu()">ADD</button>
+    <br> <br>
+    <button onclick="inmang()">PRINT</button>
+    <p id="mang"></p> <br>
+    <button onclick="inmangnguoc()">PRINT NGUOC</button>
+    <p id="mang2"></p>
+
+    <script>
+        let a = [];
+        let dem =[0];
+        function themphantu() {
+            a[dem] = Number(prompt("Nhập số"));
+            dem++;
+        }
+        function inmang() {
+            document.getElementById("mang").innerHTML = a;
+        }
+        function inmangnguoc() {
+            a.reverse();
+            document.getElementById("mang2").innerHTML = a;
+        }
+    </script>
+</body>
+</html>

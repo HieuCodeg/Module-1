@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="themphantu()">ADD</button>
+    <br> <br>
+    <button onclick="inmang()">PRINT</button>
+    <p id="mang"></p> <br>
+    <button onclick="timkytu()">KET QUA</button>
+    <p id="mang2"></p>
+
+    <script>
+        let a = [];
+        let dem =[0];
+        let kytu = prompt("Nhập ký tự bất kỳ: ")
+        function themphantu() {
+            a[dem] = prompt("Nhập ký tự thứ");
+            dem++;
+        }
+        function inmang() {
+            document.getElementById("mang").innerHTML = a;
+        }
+        function timkytu() {
+            if (a.indexOf(kytu) != -1) {
+                let cout = 0;
+                for (i=0 ; i<a.length ; i++) {
+                    if (a[i] == kytu) {
+                        cout++;
+                    }
+                }
+                document.getElementById("mang2").innerHTML = cout;
+            } else {
+                document.getElementById("mang2").innerHTML = "-1";
+            } 
+        }
+    </script>
+</body>
+</html>

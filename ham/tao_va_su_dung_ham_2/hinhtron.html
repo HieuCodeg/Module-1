@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = Number(prompt("Nhập vào bán kính:"));
+        alert("Diện tích bằng " + dientich(a));
+        alert("Chu vi bàng: "+ chuvi(a));
+        function dientich(value) {
+            value = value * value * Math.PI;
+            return value;
+        }
+        function chuvi(value) {
+            value = value * 2 * Math.PI;
+            return value;
+        }
+    </script>
+</body>
+</html>

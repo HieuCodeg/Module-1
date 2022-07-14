@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Tmperature Converter</p>
+    <p>Nhập nhiệt độ F mà bạn muốn chuyển đổi</p>
+    <lable for="dof">Độ F: </lable>
+    <input id="dof" type="number" palacehoder="Fahrenheit" 
+     oninput="chuyendoi(this.value)"
+     onchange="chuyendoi(this.value)"/>
+     <p>Độ C: <span id="doc"></span></p>
+     <script>
+        function chuyendoi(value) {
+            value = Number(value);
+            document.getElementById("doc").innerHTML = (value -32) / 1.8;
+        }
+     </script>
+</body>
+</html>

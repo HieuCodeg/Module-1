@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = Number(prompt("Nhập số bạn cần kiểm tra"));
+        if (a == 2 ) {
+            alert(a + " là số nguyên tố");
+        }
+        if (a < 2 ) {
+            alert(a + " không phải là số nguyên tố");
+        }
+        if (a>2) {
+            kiemtra = check(a);
+            if (kiemtra == 1) {
+                alert(a + " là số nguyên tố");
+            } else {
+                alert(a + " không phải là số nguyên tố");
+            }
+        }
+        function check(value) {
+            let dem = 0;
+            for (i = 2; i< value; i++) {
+                if (value % i == 0) {
+                    dem++;
+                    break;
+                }
+            }
+            if (dem==0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    </script>
+</body>
+</html>

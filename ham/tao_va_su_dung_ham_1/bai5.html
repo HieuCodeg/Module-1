@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mang1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let mang2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let a = prompt("Nhập tên một ngôi sao: ");
+        function timkiem() {
+            if (mang1.indexOf(a) != -1) {
+                document.write(mang2[mang1.indexOf(a)]);
+            } else {
+                document.write("Không tìm thấy sao");
+            }
+        }
+        timkiem();
+        
+    </script>
+</body>
+</html>
