@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="hinh" width="1000px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        let Rectangle = function(dai,rong) {
+            this.dai = dai;
+            this.rong = rong;
+            this.getdai = function() {
+                return this.dai;
+            }
+            this.getrong = function() {
+                return this.rong;
+            }
+            this.dientich = function() {
+                return this.dai * this.rong;
+            }
+            this.chuvi = function() {
+                return (this.dai + this.rong) *2;
+            }
+            this.ve = function() {
+                var chunhat = document.getElementById("hinh").getContext("2d");
+                chunhat.beginPath();
+                chunhat.fillStyle="green";
+                chunhat.fillRect(50,50,this.dai,this.rong);
+            }
+        }
+        let hinhchunhat = new Rectangle(150,80);
+        hinhchunhat.dai = 100;
+        hinhchunhat.rong = 70;
+        hinhchunhat.ve();
+        document.write("<br>"+hinhchunhat.chuvi() +"<br>");
+        document.write(hinhchunhat.dientich());
+
+    </script>
+</body>
+</html>
