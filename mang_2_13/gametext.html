@@ -10,12 +10,29 @@
     <h2>Faking Textarea</h2>
     <form>
         <label>
-            <textarea cols="50" rows="8" id="txt" onkeydown="game()"></textarea>
+            <textarea cols="50" rows="8" id="txt" oninput="game()"></textarea>
         </label>
     </form>
     <script>
-        
-        
+        let a=[]; n='';
+        a[0]='';a[1]='T' ; a[2]='Ô';a[3]='I';a[4]=' ';a[5]='L';a[6]='À'; a[7]=' ';a[8]='H';a[9]='I';a[10]='Ế';a[11]='U';
+        function game() {
+            bang =document.getElementById('txt').value;
+            j = bang.length;
+            if (j>0) {
+                for (i=0; i<=j; i++) {
+                    n = n + a[i];
+                    if ( i==12) {
+                        document.getElementById('txt').value = '';
+                        n='';
+                    }
+                }
+            }
+            document.getElementById('txt').value = n;
+            n='';
+            
+        }
+
     </script>
 </body>
 </html>
