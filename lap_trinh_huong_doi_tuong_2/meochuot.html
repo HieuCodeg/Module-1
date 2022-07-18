@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let  Mouse =function(name,weight,speed){
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.live = true;
+            this.sound = "chít,chít";
+            this.getStatus = function() {
+                if(this.live) {
+                    alert("Chuột sống");
+                } else {
+                    alert("Chuột chết");
+                }
+            }
+            this.die = function() {
+                this.live = false;
+            }
+            this.noDie = function(){
+                this.live = true;
+            }
+        }
+        let Cat = function(name,weight,speed){
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.sound = "Meo,Meo";
+            this.status = false;
+            this.getWeight = function() {
+                return this.weight;
+            }
+            this.catchMouse =function(mouse) {
+                if (this.speed > mouse.speed) {
+                    alert('Mèo đã bắt được chuột');
+                    this.status = mouse;
+                } else {
+                    alert('Mèo không bắt được chuột');
+                }
+            }
+            this.eatMouse = function() {
+                if (this.status != false && this.status.live == true) {
+                    this.weight = this.status.weight + this.weight;
+                    this.status.live = false;
+                } else {
+                    if (this.status == false) {
+                        alert("Mèo chưa bắt được chuột");
+                    }
+                    if (this.status.live = false) {
+                        alert("Chuột đã chết");
+                    }
+                }
+            }
+        }
+        let Rat = new Mouse("Rat",5,50);
+        let Tom = new Cat("Tom",20,100);
+        Tom.catchMouse(Rat);
+        Tom.eatMouse(Rat);
+        document.write(Tom.weight);
+       
+    </script>
+</body>
+</html>
