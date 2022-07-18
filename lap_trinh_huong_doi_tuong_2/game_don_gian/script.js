@@ -32,15 +32,20 @@ function Hero(image, top, left, size){
 var hero = new Hero('pokemon.png', 20, 30, 200);
 let dem =1;
 function start(){
-  if(hero.left < window.innerWidth - hero.size){
+  if(hero.left < window.innerWidth - hero.size && hero.top == 20){
     hero.moveRight();
-  } else {
-    if(hero.top < window.innerHeight - hero.size){
+  } 
+  if(hero.left >= window.innerWidth - hero.size && hero.top < window.innerHeight - hero.size){
           hero.moveDown();
-        }   
-  }
+  }   
+  if(hero.left >20  && hero.top >= window.innerHeight - hero.size){
+          hero.moveLeft();
+  }   
+  if(hero.left <= 20 && hero.top >30){
+    hero.moveUp();
+  } 
   document.getElementById('game').innerHTML = hero.getHeroElement();
-  setTimeout(start, 300);
+  setTimeout(start, 100);
 }
 
 start();
