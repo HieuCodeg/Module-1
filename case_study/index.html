@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball</title>
+    <style>
+        #myGame {
+            border: 1px solid #771fe9;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myGame" width="600" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById('myGame');
+        var ctx = canvas.getContext('2d');
+        var bankinh = 10;
+        var x = canvas.width/2;
+        var y = canvas.height - 30;
+        var dx = 2;
+        var dy = -2;
+        var barHeight = 20;
+        var barWidth = 70;
+        var barFirst = (canvas.width - barWidth)/2;
+        var rightPress = false;
+        var leftPress = false;
+        var diem = 0;
+
+       
+        
+        document.onkeydown = function(e) {
+            if (e.which == 37 ) {
+                leftPress = true;
+            } else if (e.which == 39 ) {
+                rightPress = true;
+            }
+            if (e.which == 32 || e.which == 13 || e.which == 27) {
+                document.location.reload();
+            }
+        }
+        document.onkeyup = function(e) {
+            if (e.which == 37 ) {
+                leftPress = false;
+            } else if (e.which == 39 ) {
+                rightPress = false;
+            }
+        }
+        
+
+        function draw() {
+            ctx.beginPath();
+            ctx.arc(x,y,bankinh,0,Math.PI*2);
+            ctx.fillStyle = '#441fe9';
+            ctx.fill();
+            ctx.closePath();
+        }
+        function drawBar() {
+            ctx.beginPath();
+            ctx.rect(barFirst, canvas.height-barHeight, barWidth, barHeight);
+            ctx.fillStyle = '#441fe9';
+            ctx.fill();
+            ctx.closePath();
+        }
+        function drawBall() {
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            draw();
+            drawBar();
+            if (x + dx > canvas.width - bankinh || x + dx < bankinh ) {
+                dx = - dx;
+            }
+            if (y + dy < bankinh) {
+                dy = -dy;
+            } else if (y + dy > canvas.height - bankinh - barHeight) {
+                if (x > barFirst && x < barFirst + barWidth) {
+                    diem++;
+                    dy = - dy;
+                }
+            }
+            ctx.font = "48px Arial";
+            ctx.fillStyle = 'lightsalmon';
+            ctx.fillText(diem,50,50);
+            if (y + dy >= canvas.height - bankinh ) {
+                    ctx.font = "30px Arial";
+                    ctx.fillStyle = 'red';
+                    ctx.fillText("Game over ",220,150);
+                    ctx.font = "20px Arial";
+                    ctx.fillStyle = '#4c0da0';
+                    ctx.fillText("Please press 'Space' to play again",160,180);
+                    clearInterval(interval);
+            }
+            if (leftPress && barFirst > 0) {
+                barFirst -= 7;
+            }
+            if (rightPress && barFirst < canvas.width - barWidth) {
+                barFirst +=7;
+            }
+            x += dx;
+            y +=  dy;
+        }
+        var interval = setInterval(drawBall,10) ;
+    </script>
+</body>
+</html>
