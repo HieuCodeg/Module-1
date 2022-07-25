@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>Các sản phẩm: </h2>
+  <p id="ds"><br></p>
+  <button type="button" onclick="add(matHang)">Thêm</button>
+  <button type="button" onclick="edit(matHang)">Sửa</button>
+  <button type="button" onclick="xoa(matHang)">Xóa</button>
+
+  <script>
+    var matHang = ['Sữa', 'Đường', 'Bánh', 'Kem', 'Kẹo'];
+    function hienThi(matHang) {
+      var s="";
+      for (var i=0;i<matHang.length;i++){
+        s=s+(i+1)+". "+matHang[i]+"<br>";
+      }
+      return s;
+    }
+
+    function add(matHang) {
+      var newMatHang = prompt("Nhập mặt hàng muốn thêm: ");
+      matHang.push(newMatHang);
+      document.getElementById("ds").innerHTML = hienThi(matHang);
+    }
+
+    function edit(matHang) {
+      var index = prompt("Nhập số thứ tự muốn sửa: ");
+      var newMatHang = prompt("Nhập tên mặt hàng thay thế: ");
+      matHang[index-1] = newMatHang;
+      document.getElementById("ds").innerHTML = hienThi(matHang);
+    }
+
+    function xoa(matHang) {
+      var index = prompt("Nhập số thứ tự muốn xóa: ");
+      matHang.splice(index-1,1);
+      document.getElementById("ds").innerHTML = hienThi(matHang);
+    }
+    document.getElementById("ds").innerHTML = hienThi(matHang);
+  </script>
+</body>
+</html>

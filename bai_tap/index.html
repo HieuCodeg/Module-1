@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bai tap</title>
+  <style>
+    table, tr, td{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    table td:first-child {
+      width: 200px;
+    }
+    td {
+      padding: 5px;
+    }
+    table tr:hover {
+      background-color: greenyellow;
+      cursor: pointer;
+    }
+    .done {
+      text-decoration: line-through;
+    }
+    .d-none {
+      display: none;
+    }
+    
+  </style>
+</head>
+<body>
+    <script>
+      let jobcout = 5;
+      let html = "<table>";
+      html += "<tbody>";
+      for (let row = 1; row <= jobcout; row++) {
+        html += `
+                  <tr id="row_${row}">
+                      <td> Job ${row} </td>
+                      <td > 
+                        <button id = 'btnEdit${row}' onclick="edit(${row})"> Edit </button>
+                        <button id= 'btnSave${row}' class = 'd-none' onclick="save(${row})"> Save </button>
+                        <button id= 'btnCancel${row}' class = 'd-none' onclick="cancel(${row})"> Cancel </button>
+                        <button onclick="removeJob(${row})"> Delete </button>
+                      </td>
+                  </tr>    
+                `
+      }
+      html += "</tbody>";
+      html += "</table>";
+      document.write(html);
+      
+      // function removeJob(row) {
+      //   if (confirm("Are you sure to delete this?")) {
+      //     document.querySelector(`#row_${row}`).remove();
+
+      //   }
+      // }
+      function removeJob(row) {
+        if (confirm("Are you sure to delete this?")) {
+          document.querySelector(`#row_${row}`).classList.add('done');
+        }
+      }
+      var biendem;
+      function edit(row) {
+        let tdJob = document.querySelector(`#row_${row} td:first-child`);
+        let oldName = tdJob.innerText;
+        luutru(oldName);
+        tdJob.innerHTML = `<input type = 'text' id = 'jobName${row}' value ='${oldName}'>`;
+        document.querySelector(`#btnEdit${row}`).classList.add('d-none');
+        document.querySelector(`#btnSave${row}`).classList.remove('d-none');
+        document.querySelector(`#btnCancel${row}`).classList.remove('d-none');
+      }
+      function save(row) {
+        let tdJob = document.querySelector(`#row_${row} td:first-child`);
+        let newName = document.querySelector(`#jobName${row}`).value;
+        tdJob.innerHTML = newName;
+        document.querySelector(`#btnEdit${row}`).classList.remove('d-none');
+        document.querySelector(`#btnSave${row}`).classList.add('d-none');
+        document.querySelector(`#btnCancel${row}`).classList.add('d-none');
+      }
+      function cancel(row) {
+        let tdJob = document.querySelector(`#row_${row} td:first-child`);
+        tdJob.innerHTML = biendem;
+        document.querySelector(`#btnEdit${row}`).classList.remove('d-none');
+        document.querySelector(`#btnSave${row}`).classList.add('d-none');
+        document.querySelector(`#btnCancel${row}`).classList.add('d-none');
+      }
+      function luutru(name) {
+        biendem = name;
+      }
+
+    </script>
+</body>
+</html>

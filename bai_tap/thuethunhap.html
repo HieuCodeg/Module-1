@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuế thu nhập cá nhân</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Thu nhập</td>
+            <td><input type="number" id="number" name=""></td>
+        </tr>
+        <tr>
+            <td>Tiền thuế</td>
+            <td><input id="result"></input></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="tinh()">TÍNH</button></td>
+        </tr>
+    </table>
+    
+    
+    
+    <script>
+        function tinh(){
+            let TNTT = Number(document.getElementById("number").value);
+            let thue = document.getElementById("result");
+            thue.value = `${TNTT <= 5000000 ? TNTT * 5 /100 : 
+                            TNTT <= 10000000 ? TNTT *10/100 - 250000 :
+                            TNTT <= 18000000 ? TNTT *15/100 - 750000 :
+                            TNTT <= 32000000 ? TNTT *20/100 - 1650000 :
+                            TNTT <= 52000000 ? TNTT *25/100 - 3250000 :
+                            TNTT <= 80000000 ? TNTT *30/100 - 5850000 :
+                            TNTT *35/100 - 9850000} VNĐ`;
+        }
+        
+    </script>
+</body>
+</html>

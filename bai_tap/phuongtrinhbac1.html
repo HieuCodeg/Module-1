@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>hệ số a</td>
+            <td><input type="number" id="numberA"></td>
+        </tr>
+        <tr>
+            <td>hệ số b</td>
+            <td><input type="number" id="numberB"></td>
+        </tr>
+        <tr>
+            <td>Kết quả</td>
+            <td ><input type="text" id="ketqua" disabled></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <button onclick="add()">Add</button>
+                <button onclick="cancel()">Cancel</button>
+            </td>
+        </tr>
+    </table>
+    <script >
+        function add() {
+            let a = Number(document.getElementById("numberA").value);
+            let b = Number(document.getElementById("numberB").value);
+            if (a==0) {
+                 document.getElementById("ketqua").value = "PTVN";
+            } else {
+                let c = -b/a;
+                document.getElementById("ketqua").value = c;
+            }
+           
+        }
+    </script>
+</body>
+</html>

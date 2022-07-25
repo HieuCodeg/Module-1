@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiền điện</title>
+</head>
+<br>
+    <table >
+        <tr>
+            <td>Nhập số kWh: </td>
+            <td> <input type="number" id="number" name=""> </td>
+        </tr>
+        <tr>
+            <td>Số tiền:</td>
+            <td><input id="result"></input> </td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="tinh()">TINH</button></td>
+        </tr>
+    </table>
+   
+         
+    
+    <script>
+        function tinh(){
+            let so = Number(document.getElementById("number").value);
+            let tien = document.getElementById("result");
+            tien.value = `${so <= 50 ? (so * 1678)*1.1: 
+                            so <= 100 ? (50 *1678 + (so-50) * 1734)*1.1:
+                            so <= 200 ? (50 *(1678 + 1734) + (so - 100) *2014)* 1.1:
+                            so <= 300 ? (50 * (1678 + 1734) + 100 *2014 + (so - 200) *2536) *1.1:
+                            so <= 400 ? (50 * (1678 + 1734) + 100 * (2014 + 2536) + (so-300) *2834)*1.1:
+                            (50 * (1678 + 1734) + 100 * (2014 + 2536 + 2834) + (so-300)*2927)*1.1} VNĐ`;
+        }
+        
+    </script>
+</body>
+</html>
