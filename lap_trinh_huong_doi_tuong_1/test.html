@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var Moblie = function (battery, memoryArea1, memoryArea2, memoryArea3) {
+        this.battery = battery;
+        this.memoryArea1 = memoryArea1;
+        this.memoryArea2 = memoryArea2;
+        this.memoryArea3 = memoryArea3;
+
+        this.checkStatusOnOff = function () {
+
+            if (this.battery > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+
+        this.turnOn = function () {
+            alert("Dienthoaidangbat");
+        };
+
+        this.turnOf = function () {
+            alert("Dienthoaidangtat");
+        };
+
+        this.charge = function () {
+            alert("Xoac Pin" + this.battery++);
+        };
+
+        this.writeMessenger = function () {
+            prompt("This is a messenger");
+        };
+
+        this.massengerL = function () {
+            alert("massenger da gui");
+
+        };
+        this.afterUse = function () {
+            alert("Dung mot chuc nang :" + this.battery--);
+        }
+
+    };
+    var mobile = new Moblie(10, 100, 100, 100);
+
+    function main() {
+        mobile.turnOf();
+    }
+
+    function main1() {
+        mobile.turnOn();
+    }
+
+    function main2() {
+        mobile.charge();
+    }
+
+    function main3() {
+        mobile.writeMessenger();
+    }
+
+    function main4() {
+        mobile.massengerL();
+    }
+
+    function main5() {
+        mobile.afterUse();
+
+    }
+</script>
+<font style="margin-left: 280px; color: #4CAF50;" > This my phone </font>
+<table border="1">
+
+    <th><button type="button" onclick="main()" style=" cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;"> DIENTHOAIDANGBAT
+    </button></th>
+
+    <th><button type="button" onclick="main1()" style="cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;"> DIENTHOAIDANGTAT
+    </button></th>
+
+    <th><button type="button" onclick="main2()" style="cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;"> XOAC PHIM
+    </button></th>
+
+    <th><button type="button" onclick="main3()" style="cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;"> VIET TIN NHAN
+    </button></th>
+
+    <th><button type="button" onclick="main4()" style="cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;"> SU DUNG DI
+    </button></th>
+
+    <th><button type="button" onclick="main5()" style="cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;"> SU DUNG DI
+    </button></th>
+
+</table>
+
+</body>
+</html>
