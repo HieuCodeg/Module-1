@@ -27,7 +27,8 @@
         var rightPress = false;
         var leftPress = false;
         var diem = 0;
-
+        var interval;
+        
        
         
         document.onkeydown = function(e) {
@@ -51,8 +52,14 @@
 
         function draw() {
             ctx.beginPath();
+            var grd = ctx.createLinearGradient(x - bankinh, y - bankinh, x+bankinh, y+ bankinh);
+            grd.addColorStop(0,"green");
+            grd.addColorStop(0.4,"yellow");
+            grd.addColorStop(0.6,"violet");
+            grd.addColorStop(1,"white");
+            ctx.fillStyle = grd;
             ctx.arc(x,y,bankinh,0,Math.PI*2);
-            ctx.fillStyle = '#441fe9';
+            // ctx.fillStyle = '#441fe9';
             ctx.fill();
             ctx.closePath();
         }
@@ -67,6 +74,7 @@
             ctx.clearRect(0,0,canvas.width, canvas.height);
             draw();
             drawBar();
+            
             if (x + dx > canvas.width - bankinh || x + dx < bankinh ) {
                 dx = - dx;
             }
@@ -89,6 +97,7 @@
                     ctx.fillStyle = '#4c0da0';
                     ctx.fillText("Please press 'Space' to play again",160,180);
                     clearInterval(interval);
+                    document.getElementById('btnStart').disabled = false;
             }
             if (leftPress && barFirst > 0) {
                 barFirst -= 7;
@@ -99,6 +108,7 @@
             x += dx;
             y +=  dy;
         }
+        
         var interval = setInterval(drawBall,10) ;
     </script>
 </body>
