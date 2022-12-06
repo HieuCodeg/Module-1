@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C0622G1 Nguyen Minh Hieu</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        class Staff {
+            constructor(fullName, email) {
+                this.fullName = fullName;
+                this.email = email;
+            }
+
+            setFullName(fullName) {
+                this.fullName = fullName;
+            }
+            getFullName() {
+                return this.fullName;
+            }
+            setEmail(email) {
+                this.email = email;
+            }
+            getEmail() {
+                return this.email;
+            }
+            toString() {
+                return `${this.fullName}, ${this.email}`;
+            }
+        }
+
+        let david = new Staff('David','david@gmail.com');
+        david.setFullName('David Do');
+        david.setEmail('david.do@gmail.com');
+        document.getElementById('result').innerHTML = `${david.toString()} </br>`;
+
+        let staffs = [
+            new Staff('Tomy', 'Tomy@gmail.com'),
+            new Staff('Richard', 'Richard@gmail.com'),
+            david
+        ];
+        staffs.map(function(item){
+            document.getElementById('result').innerHTML += `${item.toString()} </br>`;
+        });
+    </script>
+</body>
+</html>

@@ -19,9 +19,11 @@ var xNuoc = Math.floor(Math.random()* (canvas.width - 300) ) + 60;
 var yNuoc = -100;
 var dy = 1;
 var kiemtra = 0;
+
 document.onkeydown = function(e) {
     if (e.which == 37 ) {
         leftPressed = true;
+        document.getElementById('demo').play();
     } else if (e.which == 39) {
         rightPressed = true;
     }
@@ -33,6 +35,7 @@ document.onkeydown = function(e) {
     }
     
 }
+
 document.onkeyup = function(e) {
     if (e.which == 37 ) {
         leftPressed = false;
@@ -168,7 +171,9 @@ function draw() {
             yNuoc = -100;
         }
     }
-   
 }
 var interval = setInterval(draw,10);
+
+
+
 

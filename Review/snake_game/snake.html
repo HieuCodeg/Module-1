@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Snake</title>
+    <style>
+        body {  
+            display: flex;
+            margin: 0px;
+            padding: 0px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        canvas {
+            box-shadow: black 20px 10px 50px;
+        }
+        .gameOver {
+            border: 5px solid red;
+            box-shadow: red 20px 10px 50px;
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            background-color: aqua;
+            margin: 10px 16px;
+            width: 100px;
+            cursor: pointer;
+        }
+        .click {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>SNAKE</h1>
+    <label>CHẾ ĐỘ CHƠI</label>
+    <div>
+        <button id="boxMode" onclick="playMode1()">Border</button>
+        <button id="noBoxMode" onclick="playMode2()"> No Border</button>
+    </div>
+    <canvas id="gameSnake" width="400" height="400">
+    <script src="snake.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C0622G1 Nguyen Minh Hieu</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        function solve(a,b,c) {
+            if (a == 0) {
+                if (b == 0) {
+                    if (c == 0) {
+                        document.getElementById("result").innerText = "Phương trình vô số ngiệm";
+                        return;
+                    } else {
+                        document.getElementById("result").innerText = "Phương trình vô ngiệm";
+                        return;
+                    }
+                } else {
+                    document.getElementById("result").innerText = `x = ${(-c/b).toFixed(2)}`;
+                    return;
+                }
+            }
+
+            let delta = (Math.pow(b, 2)) - (4 * a * c);
+            if (delta < 0) {
+                document.getElementById("result").innerText = "Phương trình vô ngiệm";
+            } else if (delta == 0) {
+                document.getElementById("result").innerText = `x = ${(-b/(2*a)).toFixed(2)}`;
+            } else {
+                let x1 = ((-b + Math.sqrt(delta))/ (2*a)).toFixed(2);
+                let x2 = ((-b - Math.sqrt(delta))/ (2*a)).toFixed(2);
+                document.getElementById("result").innerText = `x1 = ${x1}, x2 = ${x2}` ;
+            }    
+        }
+        solve(0,0,0);
+    </script>
+</body>
+</html>

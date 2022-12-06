@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C0622G1 Nguyen Minh Hieu</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        function countVowel(arr) {
+            let vowel = "aeiouAEIOU";
+            let count = 0;
+            for (i = 0; i < arr.length; i++) {
+                if (vowel.indexOf(arr.charAt(i)) !== -1) {
+                    count ++;
+                }
+            }
+            document.getElementById('result').innerText = `Số nguyên âm trong chuỗi "${arr}" là: ${count}`;
+        }
+        let x = prompt("Nhập vào một chuỗi:");
+        countVowel(x);
+        
+
+    </script>
+</body>
+</html>

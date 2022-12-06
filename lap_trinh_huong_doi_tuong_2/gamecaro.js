@@ -76,7 +76,6 @@ function Main(hang, cot, id) {
     }
     this.check = function(x, y) {
         var cell = this.mang[x][y];
-        var dem = 1;
         var i = 1;
         var who = cell.value;
         while (( y + i < this.cot) && cell.value === this.mang[x][y + i].value) {
@@ -86,9 +85,9 @@ function Main(hang, cot, id) {
         var i = 1;
         while ((y - i >=0) && cell.value === this.mang[x][y - i].value) {
             dem++;
-            i--;
+            i++;
         }
-        this.end(dem,who);
+        this.end(dem);
         
         var i = 1;
         var dem = 1;
@@ -101,7 +100,7 @@ function Main(hang, cot, id) {
             dem++;
             i++;
         }
-        this.end(dem,who);
+        this.end(dem);
 
         var i = 1;
         var dem = 1;
@@ -114,7 +113,7 @@ function Main(hang, cot, id) {
             dem++;
             i++;
         }
-        this.end(dem,who);
+        this.end(dem);
 
         var i = 1;
         var dem = 1;
@@ -127,13 +126,13 @@ function Main(hang, cot, id) {
             dem++;
             i++;
         }
-        this.end(dem,who);
+        this.end(dem);
 
     }
-    this.end = function(dem,who) {
+    this.end = function(dem) {
         if (dem >= 5) {
             this.kiemtra = true;
-            if (who == 3) {
+            if (this.nguoichoi == VALUE_O) {
                 ketqua = "người chơi 2 thắng";
             } else {
                 ketqua = "người chơi 1 thắng";

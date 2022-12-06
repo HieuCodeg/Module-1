@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <input id="size" type="number" placeholder="kich thuoc mang"> <br/> <br/>
+    <input id="min" type="number" placeholder="gia tri min"> <br/> <br/>
+    <input id="max" type="number" placeholder="gia tri max"> <br/> <br/>
+    <input id="mang" type="text" disabled placeholder="mang"> <br/> <br/>
+    <input id="sumNumber" type="number" disabled placeholder="sum"> <br/> <br/>
+    <input id="maxmang" type="number" disabled placeholder="gia tri lon nhat"> <br/> <br/>
+    <input id="chanmang" type="text" disabled placeholder="cac so chan"> <br/> <br/>
+    <button onclick="show()">Click me</button>
+    <script>
+       
+        function show() { 
+            var kichthuoc = Number(document.getElementById('size').value);
+            var minNumber = Number(document.querySelector("#min").value);
+            var maxNumber = Number(document.querySelector("#max").value);
+            var numbers = new Array(kichthuoc);
+            let sum = 0;
+            let max;
+            let chan = [];
+            for (let i = 0; i< numbers.length; i++) {
+                numbers[i] = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+                sum += numbers[i];
+                if (i == 0) {
+                    max = numbers[i];
+                } else if (max < numbers[i]) {
+                    max = numbers[i];
+                }
+                if (numbers[i] % 2 == 0) {
+                    chan.push(numbers[i]);
+                }
+            } 
+            document.getElementById('mang').value = numbers;
+            document.getElementById('chanmang').value = chan.join(",");
+            document.getElementById('sumNumber').value = sum;
+            document.getElementById('maxmang').value = max;
+        }
+    </script>
+</body>
+</html>
